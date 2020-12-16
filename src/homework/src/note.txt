@@ -1,0 +1,48 @@
+float gassian_sample(mean,sigma){
+
+}
+float gaussion_pdf(float x, float mean,float sigma){
+
+}
+
+
+float pose_prob( Eigen::Isometry3d pose1,Eigen::Isometry3d pose2, float trans_sigma,float rot_sigma){
+
+}
+
+Eigen::Vector3d getPoseEuler(Eigen::Isometry3d& pose){
+}
+Eigen::Vector3d getPoseTrans(Eigen::Isometry3d& pose){
+}
+
+Eigen::Isometry3d updatePoseWithSigma(Eigen::Isometry3d pose, Eigen::Isometry3d deltaChange, float trans_sigma,float rot_sigma){
+
+}
+
+Eigen::Isometry3d convertToIsometry3d(pose){
+}
+pose convertToPose(Eigen::Isometry3d isometry){
+}
+
+
+
+
+
+
+int initialSampleNum = xxx
+
+float sampleRadius = xxx
+
+1/ sample poses randomly across sample space (x,y,z,r,p,y) based on gaussion
+
+2/ on moving, update all sample poses 
+	 with or without randomness,
+
+
+3/ on detect a tag, get tagid, estimate the possibilities of get poses under this tag 
+	p(pose|tagid,tagpose) = p(pose|tagpose)*p(tagpose|tagid)
+						  = p(pose|tagpose)*p(tagpose|realtagpose)/TAGNUM
+						  
+	update weight by the p 
+	
+	resample if necessary
